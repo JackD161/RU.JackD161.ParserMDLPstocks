@@ -4,3 +4,8 @@ out/
 !**/src/test/**/out/
 .idea
 *.iml
+/tmp/
+/target/classes/MainClassTest.class
+/src/main/java/MainClassTest.java
+/target/classes/ParserFile.class
+/target/classes/StockItem.class
