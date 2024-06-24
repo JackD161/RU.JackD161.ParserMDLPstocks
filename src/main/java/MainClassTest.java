@@ -7,9 +7,10 @@ public class MainClassTest {
         // локальные файлы
         String fileIn = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922.txt";
         String fileOut = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922_out.csv";
+        String fileOutXls = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922_out";
         ParserFile parser = new ParserFile(fileIn);
         ArrayList<StockItem> stockItems = parser.getItems();
-        System.out.println(parser.getCnt());
+        ExcellWriter.SaveData2File(fileOutXls, stockItems);
         try {
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileOut)));
             for (StockItem item : stockItems) {
