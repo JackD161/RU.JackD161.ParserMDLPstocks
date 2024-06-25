@@ -15,14 +15,16 @@ public class ExcellWriter {
                 title.createCell(0).setCellValue("SGTIN");
                 title.createCell(1).setCellValue("МНН");
                 title.createCell(2).setCellValue("Торговое название");
-                title.createCell(3).setCellValue("Тип финансирования");
+                title.createCell(3).setCellValue("Производственная серия");
+                title.createCell(4).setCellValue("Тип финансирования");
                 for (int rows = 1; rows <= items.size(); rows++) {
                     Row row = sheet.createRow(rows);
                     StockItem item = items.get(rows - 1);
                     row.createCell(0).setCellValue(item.getSgtin());
                     row.createCell(1).setCellValue(item.getMnn());
                     row.createCell(2).setCellValue(item.getTradeName());
-                    row.createCell(3).setCellValue(item.getFinanceType());
+                    row.createCell(3).setCellValue(item.getSeria());
+                    row.createCell(4).setCellValue(item.getFinanceType());
                 }
                 try (FileOutputStream out = new FileOutputStream(fileName + ".xlsx")) {
                     workbook.write(out);

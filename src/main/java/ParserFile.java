@@ -19,8 +19,9 @@ public class ParserFile {
                 String sgtin = getString(reader);
                 String mnn = getString(reader);
                 String tradeName = getString(reader);
+                String seria = getString(reader);
                 String financeType = getString(reader);
-                items.add(new StockItem(sgtin, mnn, tradeName, financeType));
+                items.add(new StockItem(sgtin, mnn, tradeName,seria, financeType));
             }
         }
         catch (FileNotFoundException e) {
@@ -44,8 +45,5 @@ public class ParserFile {
 
     public ArrayList<StockItem> getItems() {
         return items;
-    }
-    public int getCnt() {
-        return cnt;
     }
 }

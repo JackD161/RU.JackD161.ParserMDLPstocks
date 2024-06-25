@@ -5,9 +5,9 @@ public class MainClassTest {
 
     public static void main(String[] args) {
         // локальные файлы
-        String fileIn = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922.txt";
-        String fileOut = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922_out.csv";
-        String fileOutXls = "C:\\Users\\holop\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922_out";
+        String fileIn = "P:\\УАС\\Холопкин\\Остатки МДЛП\\Склад\\В обороте до 28 03 2021.txt";
+        String fileOut = "~\\IdeaProjects\\ru.JackD161.ParserMDLPstocks\\tmp\\stock922_out.csv";
+        String fileOutXls = "P:\\УАС\\Холопкин\\Остатки МДЛП\\Склад\\В_обороте_до_28_03_2021";
         ParserFile parser = new ParserFile(fileIn);
         ArrayList<StockItem> stockItems = parser.getItems();
         ExcellWriter.SaveData2File(fileOutXls, stockItems);
