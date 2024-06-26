@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class ParserFile {
     private final ArrayList<StockItem> items;
     private final String fileName;
-    int cnt = 0;
 
     public ParserFile(String fileName) {
         this.fileName = fileName;
@@ -20,8 +19,9 @@ public class ParserFile {
                 String mnn = getString(reader);
                 String tradeName = getString(reader);
                 String seria = getString(reader);
+                String expireDate = getString(reader);
                 String financeType = getString(reader);
-                items.add(new StockItem(sgtin, mnn, tradeName,seria, financeType));
+                items.add(new StockItem(sgtin, mnn, tradeName, seria, expireDate, financeType));
             }
         }
         catch (FileNotFoundException e) {
@@ -34,7 +34,6 @@ public class ParserFile {
     private String getString(BufferedReader reader) throws IOException {
         String line = reader.readLine();
         if (line.isEmpty()) {
-            cnt++;
             getString(reader);
         }
         else {

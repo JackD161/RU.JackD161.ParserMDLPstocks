@@ -16,7 +16,8 @@ public class ExcellWriter {
                 title.createCell(1).setCellValue("МНН");
                 title.createCell(2).setCellValue("Торговое название");
                 title.createCell(3).setCellValue("Производственная серия");
-                title.createCell(4).setCellValue("Тип финансирования");
+                title.createCell(4).setCellValue("Срок годности");
+                title.createCell(5).setCellValue("Тип финансирования");
                 for (int rows = 1; rows <= items.size(); rows++) {
                     Row row = sheet.createRow(rows);
                     StockItem item = items.get(rows - 1);
@@ -24,7 +25,8 @@ public class ExcellWriter {
                     row.createCell(1).setCellValue(item.getMnn());
                     row.createCell(2).setCellValue(item.getTradeName());
                     row.createCell(3).setCellValue(item.getSeria());
-                    row.createCell(4).setCellValue(item.getFinanceType());
+                    row.createCell(4).setCellValue(item.getExpireDate());
+                    row.createCell(5).setCellValue(item.getFinanceType());
                 }
                 try (FileOutputStream out = new FileOutputStream(fileName + ".xlsx")) {
                     workbook.write(out);

@@ -4,11 +4,13 @@ public class StockItem {
     private final String tradeName; // Торговое найменование
     private final String financeType; // Тип финансирования
     private final String seria; // производственная серия
-    public StockItem(String sgtin, String mnn, String tradeName, String seria, String financeType) {
+    private final String expireDate; // срок годности
+    public StockItem(String sgtin, String mnn, String tradeName, String seria, String expireDate, String financeType) {
         this.sgtin = sgtin;
         this.mnn = mnn;
         this.tradeName = tradeName;
         this.seria = seria;
+        this.expireDate = expireDate;
         this.financeType = financeType;
     }
 
@@ -30,5 +32,8 @@ public class StockItem {
 
     public String getSeria() {
         return seria;
+    }
+    public String getExpireDate() {
+        return expireDate;
     }
 }
