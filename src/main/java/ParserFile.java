@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 public class ParserFile {
     private final ArrayList<StockItem> items;
@@ -31,15 +30,7 @@ public class ParserFile {
         }
     }
     private void clear(ArrayList<String> lines) {
-        System.out.println(lines.size());
-        ListIterator<String> iterator = lines.listIterator();
-        while (iterator.hasNext()) {
-            String s = iterator.next();
-            if (s.isEmpty()) {
-                iterator.remove();
-            }
-        }
-        System.out.println(lines.size());
+        lines.removeIf(String::isEmpty);
     }
     private String getString(ArrayList<String> lines) {
         String string = lines.get(0);
