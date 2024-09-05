@@ -18,6 +18,7 @@ public class ExcellWriter {
                 title.createCell(3).setCellValue("Производственная серия");
                 title.createCell(4).setCellValue("Срок годности");
                 title.createCell(5).setCellValue("Тип финансирования");
+                title.createCell(6).setCellValue("Место деятельности");
                 for (int rows = 1; rows <= items.size(); rows++) {
                     Row row = sheet.createRow(rows);
                     StockItem item = items.get(rows - 1);
@@ -27,6 +28,7 @@ public class ExcellWriter {
                     row.createCell(3).setCellValue(item.getSeria());
                     row.createCell(4).setCellValue(item.getExpireDate());
                     row.createCell(5).setCellValue(item.getFinanceType());
+                    row.createCell(6).setCellValue(item.getMD());
                 }
                 try (FileOutputStream out = new FileOutputStream(fileName + ".xlsx")) {
                     workbook.write(out);
